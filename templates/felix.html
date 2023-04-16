@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>{% block title %}{{ title }}{% endblock %}</title>
+</head>
+
+<body>
+  <header>
+    {% include 'templates/nav.html' %}
+  </header>
+  <main>
+
+    <div class="info">
+      <div class="Title"> Title: {{ title }}
+      </div>
+      <br>
+      <div class="Date"> Date: {{ date }}</div>
+    </div>
+
+    <div class="page">{{ page }} </div>
+
+  </main>
+</body>
+
+</html>

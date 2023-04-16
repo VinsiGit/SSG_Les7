@@ -1,0 +1,11 @@
+{# templates/header.html #}
+
+<nav>
+  <ul>
+    {% for menu_item in CHANGE %}
+    <li>
+      <a href="{{ menu_item  }}.html">{{ menu_item|replace("-", " " ) }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

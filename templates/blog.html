@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Blog</title>
+</head>
+
+<body>
+  <header>
+    {% include 'templates/nav.html' %}
+  </header>
+  <main>
+    {% set i=0 %}
+    {% set end = post|length %}
+    {%- for i in range(0,end) %} <div class="container">
+      <div class="info">
+        {% set data=arrData[i] %}
+
+        <div class="Title"> Title: {{ data["title"] }}
+        </div>
+        <br>
+        <div class="Date"> Date: {{ data["date"] }}</div>
+        <br>
+        <div class="Author"> Author: {{ data["author"] }}</div>
+      </div>
+
+      <div class="post">
+        {{ post[i] }}
+      </div>
+    </div>
+    {% set i=i+1 %} {%- endfor %}
+  </main>
+</body>
+
+</html>
